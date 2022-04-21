@@ -12,14 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     extract($_POST);
 
-    if (!$username) {
+    if (!$username or !$password) {
         send_error(1);
-        if (!$pasword) {
-            send_error(1);
-        }
     }
-
-    extract($_POST); // ino 2 bar bezar
 
     $users = get_users();
 
